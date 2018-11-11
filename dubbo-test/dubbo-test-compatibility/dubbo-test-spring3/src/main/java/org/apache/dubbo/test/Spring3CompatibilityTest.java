@@ -38,6 +38,7 @@ public class Spring3CompatibilityTest {
 
         ConsumerConfiguration consumerConfiguration = consumer.getBean(ConsumerConfiguration.class);
 
+        //该注解Scan方式在Spring3版本下无法DubboComponentScan注册到Spring容器中，仅用作测试，请升级到4.3.16.RELEASE
         DemoService demoService = consumerConfiguration.getDemoService();
 
         String value = demoService.sayHello("Mercy");
